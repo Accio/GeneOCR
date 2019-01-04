@@ -15,3 +15,8 @@ output/fig1g-sub-tesseract-psm4.txt: figures/fig1g-sub.png ensembl-user-words
 
 output/fig1g-sub-tesseract-psm6.txt: figures/fig1g-sub.png ensembl-user-words
 	tesseract figures/fig1g-sub.png - --user-words data/ensembl-Hs-GRCh38.94.genes.txt -psm 6 > $@
+
+clean:
+	rm -f *~
+
+.PHONY: clean
