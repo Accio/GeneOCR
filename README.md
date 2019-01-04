@@ -1,5 +1,6 @@
-BioinfOCR to recognize gene symbols and names
+GeneOCR to recognize gene symbols and names from figures
 ===
+Jitao David Zhang, Jan 2019
 
 # Background
 
