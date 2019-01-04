@@ -23,9 +23,9 @@ We provide the list of possible genes to the tesseract program so that it can re
 make ensembl-user-words
 ```
 
-## Recognize gene symbols automatically
+## Recognize gene symbols automatically from the cropped figure
 
-From a cropped, high-resolution figure of gene symbols aligned to the right side of a heatmap, we try to recognize the gene symbols.
+From a cropped, high-resolution figure of gene symbols aligned to the right side of a heatmap ([fig1g-sub](./figures/fig1g-sub.png]), we try to recognize the gene symbols.
 
 Tesseract provides many page segmentation modes. For the given task, mode 1, 3, 4, 5 and 6 may fit.
 
@@ -44,3 +44,14 @@ diff  output/fig1g-sub-tesseract-psm6.txt figures/fig1g-sub-correctNames.txt | g
 ```
 
 It means that if the text is well aligned (such as the case in most heatmaps), tesseract with its default setting can capture the gene names well if the gene symbol candidates are passed as user words.
+
+## Recognize gene symbols from an uncropped figure
+
+I tried to run the tesseract with different modes on the whole figure 1g with the heatmap and many unrelevant visual elements. The results are not useable. It seems that currently it makes most sense to focus on cropped texts.
+
+## Next steps
+
+1. Iteratively improve the performance of OCR by giving weights to the genes in the word list.
+2. Use simulations to understand the performance of the program.
+3. Automatically recognize the text part from a heatmap
+4. Allow user to provide gene name candidates.
